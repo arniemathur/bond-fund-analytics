@@ -1,0 +1,111 @@
+# Bond Fund Universe Configuration
+# Defines the funds to analyze and their benchmark mappings
+
+funds:
+  # Core Bond ETFs
+  AGG:
+    name: "iShares Core U.S. Aggregate Bond"
+    category: "Intermediate Core Bond"
+    benchmark: "AGG"
+    issuer: "blackrock"
+    duration: 6.1
+    yield: 0.045
+    expense_ratio: 0.0003
+    credit_rating: "AA"
+
+  BND:
+    name: "Vanguard Total Bond Market"
+    category: "Intermediate Core Bond"
+    benchmark: "AGG"
+    issuer: "vanguard"
+    duration: 6.0
+    yield: 0.044
+    expense_ratio: 0.0003
+    credit_rating: "AA"
+
+  # Corporate Bond ETFs
+  VCIT:
+    name: "Vanguard Intermediate-Term Corporate"
+    category: "Corporate Bond"
+    benchmark: "LQD"
+    issuer: "vanguard"
+    duration: 6.2
+    yield: 0.051
+    expense_ratio: 0.0004
+    credit_rating: "A"
+
+  LQD:
+    name: "iShares iBoxx $ Investment Grade Corporate"
+    category: "Corporate Bond"
+    benchmark: "LQD"
+    issuer: "blackrock"
+    duration: 8.4
+    yield: 0.052
+    expense_ratio: 0.0014
+    credit_rating: "A"
+
+  # High Yield ETFs
+  HYG:
+    name: "iShares iBoxx $ High Yield Corporate"
+    category: "High Yield Bond"
+    benchmark: "HYG"
+    issuer: "blackrock"
+    duration: 3.8
+    yield: 0.071
+    expense_ratio: 0.0049
+    credit_rating: "BB"
+
+  # Treasury ETFs
+  TLT:
+    name: "iShares 20+ Year Treasury Bond"
+    category: "Long Government"
+    benchmark: "AGG"
+    issuer: "blackrock"
+    duration: 16.8
+    yield: 0.047
+    expense_ratio: 0.0015
+    credit_rating: "AAA"
+
+  SHY:
+    name: "iShares 1-3 Year Treasury Bond"
+    category: "Short Government"
+    benchmark: "AGG"
+    issuer: "blackrock"
+    duration: 1.8
+    yield: 0.044
+    expense_ratio: 0.0015
+    credit_rating: "AAA"
+
+  # Inflation-Protected ETFs
+  TIP:
+    name: "iShares TIPS Bond"
+    category: "Inflation-Protected"
+    benchmark: "AGG"
+    issuer: "blackrock"
+    duration: 6.7
+    yield: 0.025
+    expense_ratio: 0.0019
+    credit_rating: "AAA"
+
+# Category benchmarks for relative comparisons
+category_benchmarks:
+  "Intermediate Core Bond": "AGG"
+  "Corporate Bond": "LQD"
+  "High Yield Bond": "HYG"
+  "Long Government": "TLT"
+  "Short Government": "SHY"
+  "Inflation-Protected": "TIP"
+
+# Scraping configuration
+scraping:
+  rate_limit_seconds: 2.0
+  cache_ttl_hours: 24
+  max_retries: 3
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+# Analysis parameters
+analysis:
+  default_lookback_years: 5
+  risk_free_rate: 0.05
+  var_confidence: 0.95
+  monthly_periods_per_year: 12
