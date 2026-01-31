@@ -60,6 +60,11 @@ def show_landing_page():
     pulls everything together in one place.
     """)
 
+    st.warning("""
+    **Disclaimer:** This is just a tool for looking at data. It's not investment advice and I'm not
+    a financial advisor. Do your own research before making any investment decisions.
+    """)
+
     st.divider()
 
     col1, col2 = st.columns(2)
